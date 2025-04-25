@@ -1,14 +1,17 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from "react-helmet";
+import { AuthLayout } from "@/components/auth/AuthLayout";
+import { LoginForm } from "@/components/auth/LoginForm";
 
-const Index = () => {
+export default function IndexPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Helmet>
+        <title>Login - My Application</title>
+        <meta name="description" content="Login to access your account" />
+      </Helmet>
+      <AuthLayout>
+        <LoginForm />
+      </AuthLayout>
+    </>
   );
-};
-
-export default Index;
+}
